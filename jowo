@@ -95,6 +95,6 @@ fi
 if [ $jowo = 09 ]
 then
 cd
-cd jowo exploiter/tool
+cd jowo exp
 python2 git.py
 fi
